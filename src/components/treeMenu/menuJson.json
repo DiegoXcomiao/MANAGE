@@ -1,0 +1,148 @@
+﻿{
+  "resourceOrder": null,
+  "resourceId": 0,
+  "resourceExtendAttr": "0",
+  "route": "root",
+  "resourceCode": "root",
+  "parentResId": -1,
+  "show": "false",
+  "text": "CRM管理平台",
+  "children": [
+    {
+      "resourceOrder": 1,
+      "resourceId": 100,
+      "resourceExtendAttr": "1",
+      "route": "/a",
+      "resourceCode": "a",
+      "parentResId": 0,
+      "show": "false",
+      "text": "商户管理",
+      "children": [
+        {
+          "resourceOrder": 1,
+          "resourceId": 101,
+          "resourceExtendAttr": "1-1",
+          "route": "/MyMerchants",
+          "resourceCode": "MyMerchants",
+          "parentResId": 100,
+          "parentName": "商户管理",
+          "show": "false",
+          "text": "我的商户"
+        }
+      ]
+    },
+    {
+      "resourceOrder": 2,
+      "resourceId": 200,
+      "resourceExtendAttr": "2",
+      "route": "/b",
+      "resourceCode": "b",
+      "parentResId": 0,
+      "show": "false",
+      "text": "商品管理",
+      "children": [
+        {
+          "resourceOrder": 1,
+          "resourceId": 201,
+          "resourceExtendAttr": "2-1",
+          "route": "/MyGoods",
+          "resourceCode": "MyGoods",
+          "parentResId": 200,
+          "parentName": "商品管理",
+          "show": "false",
+          "text": "我的商品"
+        }
+      ]
+    },
+    {
+      "resourceOrder": 3,
+      "resourceId": 300,
+      "resourceExtendAttr": "3",
+      "route": "/c",
+      "resourceCode": "c",
+      "parentResId": 0,
+      "show": "false",
+      "text": "报表管理",
+      "children": [
+        {
+          "resourceOrder": 1,
+          "resourceId": 301,
+          "resourceExtendAttr": "3-1",
+          "route": "/MerchantsTable",
+          "resourceCode": "MerchantsTable",
+          "parentResId": 300,
+          "parentName": "报表管理",
+          "show": "false",
+          "text": "商户报表"
+        },
+        {
+          "resourceOrder": 2,
+          "resourceId": 302,
+          "resourceExtendAttr": "3-2",
+          "route": "/GoodsTable",
+          "resourceCode": "GoodsTable",
+          "parentResId": 300,
+          "parentName": "报表管理",
+          "show": "false",
+          "text": "商品报表"
+        }
+      ]
+    },
+    {
+      "resourceOrder": 4,
+      "resourceId": 400,
+      "resourceExtendAttr": "4",
+      "route": "/d",
+      "resourceCode": "d",
+      "parentResId": 0,
+      "show": "false",
+      "text": "系统管理",
+      "children": [
+        {
+          "resourceOrder": 1,
+          "resourceId": 401,
+          "resourceExtendAttr": "4-1",
+          "route": "/RoleManagement",
+          "resourceCode": "RoleManagement",
+          "parentResId": 400,
+          "parentName": "系统管理",
+          "show": "false",
+          "text": "角色管理"
+        },
+        {
+          "resourceOrder": 2,
+          "resourceId": 402,
+          "resourceExtendAttr": "4-2",
+          "route": "/NodeManagement",
+          "resourceCode": "NodeManagement",
+          "parentResId": 400,
+          "parentName": "系统管理",
+          "show": "false",
+          "text": "机构管理"
+        },
+        {
+          "resourceOrder": 3,
+          "resourceId": 403,
+          "resourceExtendAttr": "4-3",
+          "route": "/UserManagement",
+          "resourceCode": "UserManagement",
+          "parentResId": 400,
+          "parentName": "系统管理",
+          "show": "false",
+          "text": "用户管理"
+        },
+        {
+          "resourceOrder": 4,
+          "resourceId": 404,
+          "resourceExtendAttr": "4-4",
+          "route": "/RoleControl",
+          "resourceCode": "RoleControl",
+          "parentResId": 400,
+          "parentName": "系统管理",
+          "show": "false",
+          "text": "权限分配"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,794 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Code coverage report for src/components/js/md5.js</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="../../../prettify.css" />
+    <link rel="stylesheet" href="../../../base.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style type='text/css'>
+        .coverage-summary .sorter {
+            background-image: url(../../../sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+<body>
+<div class='wrapper'>
+  <div class='pad1'>
+    <h1>
+      <a href="../../../index.html">All files</a> / <a href="index.html">src/components/js</a> md5.js
+    </h1>
+    <div class='clearfix'>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">0% </span>
+        <span class="quiet">Statements</span>
+        <span class='fraction'>0/144</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">0% </span>
+        <span class="quiet">Branches</span>
+        <span class='fraction'>0/12</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">0% </span>
+        <span class="quiet">Functions</span>
+        <span class='fraction'>0/19</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">0% </span>
+        <span class="quiet">Lines</span>
+        <span class='fraction'>0/137</span>
+      </div>
+    </div>
+  </div>
+  <div class='status-line low'></div>
+<pre><table class="coverage">
+<tr><td class="line-count quiet">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80
+81
+82
+83
+84
+85
+86
+87
+88
+89
+90
+91
+92
+93
+94
+95
+96
+97
+98
+99
+100
+101
+102
+103
+104
+105
+106
+107
+108
+109
+110
+111
+112
+113
+114
+115
+116
+117
+118
+119
+120
+121
+122
+123
+124
+125
+126
+127
+128
+129
+130
+131
+132
+133
+134
+135
+136
+137
+138
+139
+140
+141
+142
+143
+144
+145
+146
+147
+148
+149
+150
+151
+152
+153
+154
+155
+156
+157
+158
+159
+160
+161
+162
+163
+164
+165
+166
+167
+168
+169
+170
+171
+172
+173
+174
+175
+176
+177
+178
+179
+180
+181
+182
+183
+184
+185
+186
+187
+188
+189
+190
+191
+192
+193
+194
+195
+196
+197
+198
+199
+200
+201
+202
+203
+204
+205
+206
+207
+208
+209
+210
+211
+212
+213
+214
+215
+216
+217
+218
+219
+220
+221
+222
+223
+224
+225
+226
+227
+228
+229
+230
+231
+232
+233
+234
+235
+236
+237
+238
+239
+240
+241
+242
+243
+244</td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">/*
+ * A JavaScript implementation of the RSA Data Security, Inc. MD5 Message
+ * Digest Algorithm, as defined in RFC 1321.
+ * Version 2.1 Copyright (C) Paul Johnston 1999 - 2002.
+ * Other contributors: Greg Holt, Andrew Kepert, Ydnar, Lostinet
+ * Distributed under the BSD License
+ * See http://pajhome.org.uk/crypt/md5 for more info.
+ */
+&nbsp;
+/*
+ * Configurable variables. You may need to tweak these to be compatible with
+ * the server-side, but the defaults work in most cases.
+ */
+var hexcase = <span class="cstat-no" title="statement not covered" >0 /* hex output format. 0 - lowercase; 1 - uppercase        */</span>
+var b64pad = <span class="cstat-no" title="statement not covered" >'' /* base-64 pad character. "=" for strict RFC compliance   */</span>
+var chrsz = <span class="cstat-no" title="statement not covered" >8 /* bits per input character. 8 - ASCII; 16 - Unicode      */</span>
+&nbsp;
+/*
+ * These are the functions you'll usually want to call
+ * They take string arguments and return either hex or base-64 encoded strings
+ */
+export function <span class="fstat-no" title="function not covered" >hexMd5 (s) { <span class="cstat-no" title="statement not covered" >return binl2hex(coreMd5(str2binl(s), s.length * chrsz)) }</span></span>
+export function <span class="fstat-no" title="function not covered" >b64Md5 (s) { <span class="cstat-no" title="statement not covered" >return binl2b64(coreMd5(str2binl(s), s.length * chrsz)) }</span></span>
+export function <span class="fstat-no" title="function not covered" >strMd5 (s) { <span class="cstat-no" title="statement not covered" >return binl2str(coreMd5(str2binl(s), s.length * chrsz)) }</span></span>
+export function <span class="fstat-no" title="function not covered" >hexHmacMd5 (key, data) { <span class="cstat-no" title="statement not covered" >return binl2hex(coreHmacMd5(key, data)) }</span></span>
+export function <span class="fstat-no" title="function not covered" >b64HmacMd5 (key, data) { <span class="cstat-no" title="statement not covered" >return binl2b64(coreHmacMd5(key, data)) }</span></span>
+export function strHmacMd5 (key, data) { <span class="cstat-no" title="statement not covered" >return binl2str(coreHmacMd5(key, data)) }</span>
+&nbsp;
+/*
+ * Perform a simple self-test to see if the VM is working
+ */
+(<span class="fstat-no" title="function not covered" >function () </span>{
+<span class="cstat-no" title="statement not covered" >  console.log(hexMd5('abc'))</span>
+<span class="cstat-no" title="statement not covered" >  console.log(b64Md5('abc'))</span>
+<span class="cstat-no" title="statement not covered" >  console.log(strMd5('abc'))</span>
+<span class="cstat-no" title="statement not covered" >  console.log(hexHmacMd5('abc'))</span>
+<span class="cstat-no" title="statement not covered" >  console.log(b64HmacMd5('abc'))</span>
+<span class="cstat-no" title="statement not covered" >  console.log(strHmacMd5('abc'))</span>
+})()
+&nbsp;
+/*
+ * Calculate the MD5 of an array of little-endian words, and a bit length
+ */
+function <span class="fstat-no" title="function not covered" >coreMd5 (x, len) {</span>
+  /* append padding */
+<span class="cstat-no" title="statement not covered" >  x[len &gt;&gt; 5] |= 0x80 &lt;&lt; ((len) % 32)</span>
+<span class="cstat-no" title="statement not covered" >  x[(((len + 64) &gt;&gt;&gt; 9) &lt;&lt; 4) + 14] = len</span>
+&nbsp;
+  var a = <span class="cstat-no" title="statement not covered" >1732584193</span>
+  var b = <span class="cstat-no" title="statement not covered" >-271733879</span>
+  var c = <span class="cstat-no" title="statement not covered" >-1732584194</span>
+  var d = <span class="cstat-no" title="statement not covered" >271733878</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >  for (var i = 0; i &lt; x.length; i += 16) {</span>
+    var olda = <span class="cstat-no" title="statement not covered" >a</span>
+    var oldb = <span class="cstat-no" title="statement not covered" >b</span>
+    var oldc = <span class="cstat-no" title="statement not covered" >c</span>
+    var oldd = <span class="cstat-no" title="statement not covered" >d</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >    a = md5Ff(a, b, c, d, x[i + 0], 7, -680876936)</span>
+<span class="cstat-no" title="statement not covered" >    d = md5Ff(d, a, b, c, x[i + 1], 12, -389564586)</span>
+<span class="cstat-no" title="statement not covered" >    c = md5Ff(c, d, a, b, x[i + 2], 17, 606105819)</span>
+<span class="cstat-no" title="statement not covered" >    b = md5Ff(b, c, d, a, x[i + 3], 22, -1044525330)</span>
+<span class="cstat-no" title="statement not covered" >    a = md5Ff(a, b, c, d, x[i + 4], 7, -176418897)</span>
+<span class="cstat-no" title="statement not covered" >    d = md5Ff(d, a, b, c, x[i + 5], 12, 1200080426)</span>
+<span class="cstat-no" title="statement not covered" >    c = md5Ff(c, d, a, b, x[i + 6], 17, -1473231341)</span>
+<span class="cstat-no" title="statement not covered" >    b = md5Ff(b, c, d, a, x[i + 7], 22, -45705983)</span>
+<span class="cstat-no" title="statement not covered" >    a = md5Ff(a, b, c, d, x[i + 8], 7, 1770035416)</span>
+<span class="cstat-no" title="statement not covered" >    d = md5Ff(d, a, b, c, x[i + 9], 12, -1958414417)</span>
+<span class="cstat-no" title="statement not covered" >    c = md5Ff(c, d, a, b, x[i + 10], 17, -42063)</span>
+<span class="cstat-no" title="statement not covered" >    b = md5Ff(b, c, d, a, x[i + 11], 22, -1990404162)</span>
+<span class="cstat-no" title="statement not covered" >    a = md5Ff(a, b, c, d, x[i + 12], 7, 1804603682)</span>
+<span class="cstat-no" title="statement not covered" >    d = md5Ff(d, a, b, c, x[i + 13], 12, -40341101)</span>
+<span class="cstat-no" title="statement not covered" >    c = md5Ff(c, d, a, b, x[i + 14], 17, -1502002290)</span>
+<span class="cstat-no" title="statement not covered" >    b = md5Ff(b, c, d, a, x[i + 15], 22, 1236535329)</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >    a = md5Gg(a, b, c, d, x[i + 1], 5, -165796510)</span>
+<span class="cstat-no" title="statement not covered" >    d = md5Gg(d, a, b, c, x[i + 6], 9, -1069501632)</span>
+<span class="cstat-no" title="statement not covered" >    c = md5Gg(c, d, a, b, x[i + 11], 14, 643717713)</span>
+<span class="cstat-no" title="statement not covered" >    b = md5Gg(b, c, d, a, x[i + 0], 20, -373897302)</span>
+<span class="cstat-no" title="statement not covered" >    a = md5Gg(a, b, c, d, x[i + 5], 5, -701558691)</span>
+<span class="cstat-no" title="statement not covered" >    d = md5Gg(d, a, b, c, x[i + 10], 9, 38016083)</span>
+<span class="cstat-no" title="statement not covered" >    c = md5Gg(c, d, a, b, x[i + 15], 14, -660478335)</span>
+<span class="cstat-no" title="statement not covered" >    b = md5Gg(b, c, d, a, x[i + 4], 20, -405537848)</span>
+<span class="cstat-no" title="statement not covered" >    a = md5Gg(a, b, c, d, x[i + 9], 5, 568446438)</span>
+<span class="cstat-no" title="statement not covered" >    d = md5Gg(d, a, b, c, x[i + 14], 9, -1019803690)</span>
+<span class="cstat-no" title="statement not covered" >    c = md5Gg(c, d, a, b, x[i + 3], 14, -187363961)</span>
+<span class="cstat-no" title="statement not covered" >    b = md5Gg(b, c, d, a, x[i + 8], 20, 1163531501)</span>
+<span class="cstat-no" title="statement not covered" >    a = md5Gg(a, b, c, d, x[i + 13], 5, -1444681467)</span>
+<span class="cstat-no" title="statement not covered" >    d = md5Gg(d, a, b, c, x[i + 2], 9, -51403784)</span>
+<span class="cstat-no" title="statement not covered" >    c = md5Gg(c, d, a, b, x[i + 7], 14, 1735328473)</span>
+<span class="cstat-no" title="statement not covered" >    b = md5Gg(b, c, d, a, x[i + 12], 20, -1926607734)</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >    a = md5Hh(a, b, c, d, x[i + 5], 4, -378558)</span>
+<span class="cstat-no" title="statement not covered" >    d = md5Hh(d, a, b, c, x[i + 8], 11, -2022574463)</span>
+<span class="cstat-no" title="statement not covered" >    c = md5Hh(c, d, a, b, x[i + 11], 16, 1839030562)</span>
+<span class="cstat-no" title="statement not covered" >    b = md5Hh(b, c, d, a, x[i + 14], 23, -35309556)</span>
+<span class="cstat-no" title="statement not covered" >    a = md5Hh(a, b, c, d, x[i + 1], 4, -1530992060)</span>
+<span class="cstat-no" title="statement not covered" >    d = md5Hh(d, a, b, c, x[i + 4], 11, 1272893353)</span>
+<span class="cstat-no" title="statement not covered" >    c = md5Hh(c, d, a, b, x[i + 7], 16, -155497632)</span>
+<span class="cstat-no" title="statement not covered" >    b = md5Hh(b, c, d, a, x[i + 10], 23, -1094730640)</span>
+<span class="cstat-no" title="statement not covered" >    a = md5Hh(a, b, c, d, x[i + 13], 4, 681279174)</span>
+<span class="cstat-no" title="statement not covered" >    d = md5Hh(d, a, b, c, x[i + 0], 11, -358537222)</span>
+<span class="cstat-no" title="statement not covered" >    c = md5Hh(c, d, a, b, x[i + 3], 16, -722521979)</span>
+<span class="cstat-no" title="statement not covered" >    b = md5Hh(b, c, d, a, x[i + 6], 23, 76029189)</span>
+<span class="cstat-no" title="statement not covered" >    a = md5Hh(a, b, c, d, x[i + 9], 4, -640364487)</span>
+<span class="cstat-no" title="statement not covered" >    d = md5Hh(d, a, b, c, x[i + 12], 11, -421815835)</span>
+<span class="cstat-no" title="statement not covered" >    c = md5Hh(c, d, a, b, x[i + 15], 16, 530742520)</span>
+<span class="cstat-no" title="statement not covered" >    b = md5Hh(b, c, d, a, x[i + 2], 23, -995338651)</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >    a = md5Ii(a, b, c, d, x[i + 0], 6, -198630844)</span>
+<span class="cstat-no" title="statement not covered" >    d = md5Ii(d, a, b, c, x[i + 7], 10, 1126891415)</span>
+<span class="cstat-no" title="statement not covered" >    c = md5Ii(c, d, a, b, x[i + 14], 15, -1416354905)</span>
+<span class="cstat-no" title="statement not covered" >    b = md5Ii(b, c, d, a, x[i + 5], 21, -57434055)</span>
+<span class="cstat-no" title="statement not covered" >    a = md5Ii(a, b, c, d, x[i + 12], 6, 1700485571)</span>
+<span class="cstat-no" title="statement not covered" >    d = md5Ii(d, a, b, c, x[i + 3], 10, -1894986606)</span>
+<span class="cstat-no" title="statement not covered" >    c = md5Ii(c, d, a, b, x[i + 10], 15, -1051523)</span>
+<span class="cstat-no" title="statement not covered" >    b = md5Ii(b, c, d, a, x[i + 1], 21, -2054922799)</span>
+<span class="cstat-no" title="statement not covered" >    a = md5Ii(a, b, c, d, x[i + 8], 6, 1873313359)</span>
+<span class="cstat-no" title="statement not covered" >    d = md5Ii(d, a, b, c, x[i + 15], 10, -30611744)</span>
+<span class="cstat-no" title="statement not covered" >    c = md5Ii(c, d, a, b, x[i + 6], 15, -1560198380)</span>
+<span class="cstat-no" title="statement not covered" >    b = md5Ii(b, c, d, a, x[i + 13], 21, 1309151649)</span>
+<span class="cstat-no" title="statement not covered" >    a = md5Ii(a, b, c, d, x[i + 4], 6, -145523070)</span>
+<span class="cstat-no" title="statement not covered" >    d = md5Ii(d, a, b, c, x[i + 11], 10, -1120210379)</span>
+<span class="cstat-no" title="statement not covered" >    c = md5Ii(c, d, a, b, x[i + 2], 15, 718787259)</span>
+<span class="cstat-no" title="statement not covered" >    b = md5Ii(b, c, d, a, x[i + 9], 21, -343485551)</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >    a = safeAdd(a, olda)</span>
+<span class="cstat-no" title="statement not covered" >    b = safeAdd(b, oldb)</span>
+<span class="cstat-no" title="statement not covered" >    c = safeAdd(c, oldc)</span>
+<span class="cstat-no" title="statement not covered" >    d = safeAdd(d, oldd)</span>
+  }
+<span class="cstat-no" title="statement not covered" >  return [a, b, c, d]</span>
+}
+&nbsp;
+/*
+ * These functions implement the four basic operations the algorithm uses.
+ */
+function <span class="fstat-no" title="function not covered" >md5Cmn (q, a, b, x, s, t) {</span>
+<span class="cstat-no" title="statement not covered" >  return safeAdd(bitRol(safeAdd(safeAdd(a, q), safeAdd(x, t)), s), b)</span>
+}
+function <span class="fstat-no" title="function not covered" >md5Ff (a, b, c, d, x, s, t) {</span>
+<span class="cstat-no" title="statement not covered" >  return md5Cmn((b &amp; c) | ((~b) &amp; d), a, b, x, s, t)</span>
+}
+function <span class="fstat-no" title="function not covered" >md5Gg (a, b, c, d, x, s, t) {</span>
+<span class="cstat-no" title="statement not covered" >  return md5Cmn((b &amp; d) | (c &amp; (~d)), a, b, x, s, t)</span>
+}
+function <span class="fstat-no" title="function not covered" >md5Hh (a, b, c, d, x, s, t) {</span>
+<span class="cstat-no" title="statement not covered" >  return md5Cmn(b ^ c ^ d, a, b, x, s, t)</span>
+}
+function <span class="fstat-no" title="function not covered" >md5Ii (a, b, c, d, x, s, t) {</span>
+<span class="cstat-no" title="statement not covered" >  return md5Cmn(c ^ (b | (~d)), a, b, x, s, t)</span>
+}
+&nbsp;
+/*
+ * Calculate the HMAC-MD5, of a key and some data
+ */
+function <span class="fstat-no" title="function not covered" >coreHmacMd5 (key, data) {</span>
+<span class="cstat-no" title="statement not covered" >  if (key === undefined) { <span class="cstat-no" title="statement not covered" >return [] }</span></span>
+<span class="cstat-no" title="statement not covered" >  if (data === undefined) { <span class="cstat-no" title="statement not covered" >return [] }</span></span>
+  var bkey = <span class="cstat-no" title="statement not covered" >str2binl(key)</span>
+<span class="cstat-no" title="statement not covered" >  if (bkey.length &gt; 16) <span class="cstat-no" title="statement not covered" >b</span>key = coreMd5(bkey, key.length * chrsz)</span>
+&nbsp;
+  var ipad = <span class="cstat-no" title="statement not covered" >Array(16)</span>
+  var opad = <span class="cstat-no" title="statement not covered" >Array(16)</span>
+<span class="cstat-no" title="statement not covered" >  for (var i = 0; i &lt; 16; i++) {</span>
+<span class="cstat-no" title="statement not covered" >    ipad[i] = bkey[i] ^ 0x36363636</span>
+<span class="cstat-no" title="statement not covered" >    opad[i] = bkey[i] ^ 0x5C5C5C5C</span>
+  }
+&nbsp;
+  var hash = <span class="cstat-no" title="statement not covered" >coreMd5(ipad.concat(str2binl(data)), 512 + data.length * chrsz)</span>
+<span class="cstat-no" title="statement not covered" >  return coreMd5(opad.concat(hash), 512 + 128)</span>
+}
+&nbsp;
+/*
+ * Add integers, wrapping at 2^32. This uses 16-bit operations internally
+ * to work around bugs in some JS interpreters.
+ */
+function <span class="fstat-no" title="function not covered" >safeAdd (x, y) {</span>
+  var lsw = <span class="cstat-no" title="statement not covered" >(x &amp; 0xFFFF) + (y &amp; 0xFFFF)</span>
+  var msw = <span class="cstat-no" title="statement not covered" >(x &gt;&gt; 16) + (y &gt;&gt; 16) + (lsw &gt;&gt; 16)</span>
+<span class="cstat-no" title="statement not covered" >  return (msw &lt;&lt; 16) | (lsw &amp; 0xFFFF)</span>
+}
+&nbsp;
+/*
+ * Bitwise rotate a 32-bit number to the left.
+ */
+function <span class="fstat-no" title="function not covered" >bitRol (num, cnt) {</span>
+<span class="cstat-no" title="statement not covered" >  return (num &lt;&lt; cnt) | (num &gt;&gt;&gt; (32 - cnt))</span>
+}
+&nbsp;
+/*
+ * Convert a string to an array of little-endian words
+ * If chrsz is ASCII, characters &gt;255 have their hi-byte silently ignored.
+ */
+function <span class="fstat-no" title="function not covered" >str2binl (str) {</span>
+<span class="cstat-no" title="statement not covered" >  if (str === undefined) { <span class="cstat-no" title="statement not covered" >return [] }</span></span>
+  var bin = <span class="cstat-no" title="statement not covered" >[]</span>
+  var mask = <span class="cstat-no" title="statement not covered" >(1 &lt;&lt; chrsz) - 1</span>
+<span class="cstat-no" title="statement not covered" >  for (var i = 0; i &lt; str.length * chrsz; i += chrsz) { <span class="cstat-no" title="statement not covered" >bin[i &gt;&gt; 5] |= (str.charCodeAt(i / chrsz) &amp; mask) &lt;&lt; (i % 32) }</span></span>
+<span class="cstat-no" title="statement not covered" >  return bin</span>
+}
+&nbsp;
+/*
+ * Convert an array of little-endian words to a string
+ */
+function <span class="fstat-no" title="function not covered" >binl2str (bin) {</span>
+  var str = <span class="cstat-no" title="statement not covered" >''</span>
+  var mask = <span class="cstat-no" title="statement not covered" >(1 &lt;&lt; chrsz) - 1</span>
+<span class="cstat-no" title="statement not covered" >  for (var i = 0; i &lt; bin.length * 32; i += chrsz) { <span class="cstat-no" title="statement not covered" >str += String.fromCharCode((bin[i &gt;&gt; 5] &gt;&gt;&gt; (i % 32)) &amp; mask) }</span></span>
+<span class="cstat-no" title="statement not covered" >  return str</span>
+}
+&nbsp;
+/*
+ * Convert an array of little-endian words to a hex string.
+ */
+function <span class="fstat-no" title="function not covered" >binl2hex (binarray) {</span>
+  var hexTab = <span class="cstat-no" title="statement not covered" >hexcase ? '0123456789ABCDEF' : '0123456789abcdef'</span>
+  var str = <span class="cstat-no" title="statement not covered" >''</span>
+<span class="cstat-no" title="statement not covered" >  for (var i = 0; i &lt; binarray.length * 4; i++) {</span>
+<span class="cstat-no" title="statement not covered" >    str += hexTab.charAt((binarray[i &gt;&gt; 2] &gt;&gt; ((i % 4) * 8 + 4)) &amp; 0xF) +</span>
+      hexTab.charAt((binarray[i &gt;&gt; 2] &gt;&gt; ((i % 4) * 8)) &amp; 0xF)
+  }
+<span class="cstat-no" title="statement not covered" >  return str</span>
+}
+&nbsp;
+/*
+ * Convert an array of little-endian words to a base-64 string
+ */
+function <span class="fstat-no" title="function not covered" >binl2b64 (binarray) {</span>
+  var tab = <span class="cstat-no" title="statement not covered" >'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/'</span>
+  var str = <span class="cstat-no" title="statement not covered" >''</span>
+<span class="cstat-no" title="statement not covered" >  for (var i = 0; i &lt; binarray.length * 4; i += 3) {</span>
+    var triplet = (<span class="cstat-no" title="statement not covered" >((binarray[i &gt;&gt; 2] &gt;&gt; 8 * (i % 4)) &amp; 0xFF) &lt;&lt; 16) |</span>
+      (((binarray[i + 1 &gt;&gt; 2] &gt;&gt; 8 * ((i + 1) % 4)) &amp; 0xFF) &lt;&lt; 8) |
+      ((binarray[i + 2 &gt;&gt; 2] &gt;&gt; 8 * ((i + 2) % 4)) &amp; 0xFF)
+<span class="cstat-no" title="statement not covered" >    for (var j = 0; j &lt; 4; j++) {</span>
+<span class="cstat-no" title="statement not covered" >      if (i * 8 + j * 6 &gt; binarray.length * 32) <span class="cstat-no" title="statement not covered" >str += b64pad</span></span>
+      else <span class="cstat-no" title="statement not covered" >str += tab.charAt((triplet &gt;&gt; 6 * (3 - j)) &amp; 0x3F)</span>
+    }
+  }
+<span class="cstat-no" title="statement not covered" >  return str</span>
+}
+&nbsp;</pre></td></tr>
+</table></pre>
+<div class='push'></div><!-- for sticky footer -->
+</div><!-- /wrapper -->
+<div class='footer quiet pad2 space-top1 center small'>
+  Code coverage
+  generated by <a href="https://istanbul.js.org/" target="_blank">istanbul</a> at Sun Dec 06 2020 11:28:46 GMT+0800 (GMT+08:00)
+</div>
+</div>
+<script src="../../../prettify.js"></script>
+<script>
+window.onload = function () {
+        if (typeof prettyPrint === 'function') {
+            prettyPrint();
+        }
+};
+</script>
+<script src="../../../sorter.js"></script>
+</body>
+</html>

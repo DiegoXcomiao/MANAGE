@@ -1,0 +1,4 @@
+﻿{
+  "clientPath": "http://localhost:8080/#",
+  "serverPath": "http://127.0.0.1:8011"
+}
